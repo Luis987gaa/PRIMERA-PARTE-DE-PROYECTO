@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Lista de {{ titulo }}</h1>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">APELLIDO PATERNO</th>
+                <th scope="col">APELLIDO MATERNO</th>
+                <th scope="col">EDAD</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for familiar in familiares %}
+              <tr class="table-warning">
+                <th scope="row">{{ familiar.id }}</th>
+                <td>{{ familiar.nombre }}</td>
+                <td>{{ familiar.apellido_parterno }}</td>
+                <td>{{ familiar.apellido_materno }}</td>
+                <td>{{ familiar.edad }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+{% endblock content %}
