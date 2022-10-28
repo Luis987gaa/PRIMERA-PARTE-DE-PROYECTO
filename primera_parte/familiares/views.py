@@ -5,7 +5,8 @@ from . import models
 
 def vista_familiares(request):
     familiares = models.Familiares.objects.all()
-
+    for familiar in familiares:
+        familiar.obtener_edad()
     context = {
         'familiares': familiares,
         'titulo' : 'Familiares'
