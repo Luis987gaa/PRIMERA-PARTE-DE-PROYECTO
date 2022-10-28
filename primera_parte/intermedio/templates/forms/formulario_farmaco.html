@@ -1,0 +1,13 @@
+{% extends 'Home.html' %}
+{% load static %}
+{% block content %}
+<div class="my-3">
+    <form method="post">
+        <h3>AGREGAR FÁRMACOS</h3>
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-primary" type="submit">Agregar</button>
+    </form>
+  
+</div>
+{% endblock content %}

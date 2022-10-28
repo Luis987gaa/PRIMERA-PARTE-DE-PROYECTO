@@ -1,0 +1,87 @@
+  {% extends 'home.html' %}
+  {% load static %}
+  {% block content %}
+<!-- Content section 1-->
+<section id="scroll">
+    <div class="container px-5">
+        <h1 class="mt-5">Lista de pacientes</h1>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">TIPO DE SANGRE</th>
+                <th scope="col">NACIONALIDAD</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for paciente in pacientes %}
+              <tr class="table-warning">
+                <th scope="row">{{ paciente.id }}</th>
+                <td>{{ paciente.nombre }}</td>
+                <td>{{ paciente.tipo_sangre }}</td>
+                <td>{{ paciente.nacionalidad }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+    </div>
+</section>
+<!-- Content section 2-->
+<section>
+    <div class="container px-5">
+        <h1 class="mt-5">Lista de enfermedades</h1>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">TIPO</th>
+                <th scope="col">SÍNTOMA</th>
+                <th scope="col">CLASIFICACIÓN</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for enfermedad in enfermedades %}
+              <tr class="table-primary">
+                <th scope="row">{{ enfermedad.id }}</th>
+                <td>{{ enfermedad.nombre }}</td>
+                <td>{{ enfermedad.tipo }}</td>
+                <td>{{ enfermedad.sintoma }}</td>
+                <td>{{ enfermedad.clasificacion }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+    </div>
+</section>
+<!-- Content section 3-->
+<section>
+    <div class="container px-5">
+        <h1 class="mt-5">Lista de farmacos</h1>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">PRINCIPIO ACTIVO</th>
+                <th scope="col">USOS</th>
+                <th scope="col">TRATAMIENTO</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for farmaco in farmacos %}
+              <tr class="table-secondary">
+                <th scope="row">{{ farmaco.id }}</th>
+                <td>{{ farmaco.nombre }}</td>
+                <td>{{ farmaco.principio_activo }}</td>
+                <td>{{ farmaco.usos }}</td>
+                <td>{{ farmaco.tratamiento }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+    </div>
+</section>
+  {% endblock content %}
+  
